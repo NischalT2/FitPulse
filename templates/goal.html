@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Set a Goal
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('goal') }}" method="post">
+        <!-- makes it a horizontal row and makes sure that the elements are evenly spaced-->
+        <div class="row justify-content-center"></div>
+            <div class="container mt-5">
+                <div class="row align-items-center">
+                    <div class="text-dark">
+                        <h2>Choose A Goal: </h2>
+                    </div>
+                    <!--dropdown menu that lets the user select from these options-->
+                    <div class="col">
+                        <select id="goal" name="goal" class="form-select" required>
+                            <option value="" disabled selected>Select a goal</option>
+                            <option value="Lose Weight">Lose weight</option>
+                            <option value="Increase Strength">Increase Strength</option>
+                            <option value="Increase Muscle Mass">Increase Muscle Mass</option>
+                            <option value="Lower Blood Pressure">Lower Blood Pressure</option>
+                            <option value="Increase Stamina">Increase Stamina</option>
+                            <option value="Increase Flexibility">Increase Flexibility</option>
+                            <option value="Improve Speed and Agility">Improve Speed and Agility</option>
+                            <option value="Increase Jump Power">Increase Jump Power</option>
+                            <option value="Enhance Mental Health">Enhance Mental Health</option>
+                            <option value="Reduce Body Fat Percentage">Reduce Body Fat Percentage</option>
+                            <option value="Strengthen Core and Balance">Strengthen Core and Balance</option>
+                            <option value="Eat Healthier">Eat Healthier</option>
+                        </select>
+                    </div>
+                 <!-- Submit Button -->
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary">Get Plan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    {% if goal_response %}
+        <div class="mt-5 text-dark">
+            <h3>Detailed Plan:</h3>
+            <p>{{ goal_response }}</p>
+        </div>
+    {% endif %}
+
+
+{% endblock %}

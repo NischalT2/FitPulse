@@ -1,0 +1,195 @@
+html, body {
+    height: 100%; /* Ensures the page takes up full height */
+    margin: 0; /* removes margin */
+    display: flex; /* Uses flex for layout */
+    flex-direction: column; /* Arranges the items vertically */
+}
+
+body {
+    font-family: "Georgia", Serif; /* font used for the body */
+    background-color: #c4e2f7;
+    
+}
+
+.logo {
+    height: 200px;
+    width: auto;  /* Maintain aspect ratio */
+    object-fit: contain; /* ensures that the image doesn't stretch */
+    padding-left: 50px; /* adds space to the left of the logo */
+    margin-top: 10px; /* adds top margin */
+}
+
+.navbar-nav {
+    padding-right: 80px;
+}
+
+/* styling for all nav links */
+.navbar-nav .nav-link {
+    font-weight: bold;
+    text-transform: uppercase; /* makes the words in navbar all capitalized */
+    padding: 10px 40px 30px; 
+    margin-right: 35px;
+    transition: color 0.3s ease; /* transition for when hovered */
+}
+
+/* Change the color when hovering over links */
+.navbar-nav .nav-link:hover {
+    color: #f0b9c2;
+    text-decoration: underline; /* Add underline on hover */ 
+} 
+
+main {
+    flex: 1; /* lets it fill the available space */
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column; /* stack vertically */
+    min-height: 100vh; /* ensures container fills the full height */
+}
+
+.content-wrap {
+    flex: 1; /* lets it fill the available space */
+}
+
+footer {
+    background-color: #0000001a;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+
+.textbox h1 {
+    font-size: 80px;
+    color: #fff;
+}
+
+.textbox p {
+    font-size: 20px;
+    padding: 10px 0 20px;
+    color: #fff;
+}
+
+/* styling for the button */
+.hero-btn{
+    display: inline-block;
+    color: #fff;
+    border: 3px solid #1b74cc;
+    text-decoration: none; /* no underlines */
+    padding: 12px 30px;
+    font-size: 35px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+/* when the user hovers over the button, the button changes background */
+.hero-btn:hover{
+    border: 3px solid #f0b9c2;
+    background: #f0b9c2;
+    transition: 1s; /* for more smoothness */
+    color: #fff;
+}
+
+.container {
+    color: #fff;
+}
+
+.headtext h1 {
+    font-size: 50px;
+}
+
+.noaccount {
+    color:#fff
+}
+
+.container1 {
+    color: #000
+}
+/* makes adjustments for smaller screens so that the contents fit */
+@media(max-width: 700px) {
+
+    .logo {
+        height: 100px;
+        padding-left: 20px;
+    }
+
+    .textbox h1 {
+        font-size: 35px;
+    }
+    
+    .blankprof {
+        width: 90px;
+    }
+
+    .card {
+        margin: 0 auto; /* Center the card */
+        width: 100%; /* Make the card take full width */
+    }
+
+    .d-flex .rounded-3 {
+        flex-direction: column; /* Stack stats vertically */
+        text-align: center; /* Center-align stats text */
+    }
+
+    .containerchange {
+        padding-top: 20px; /* Reduce padding for smaller screens */
+        padding-bottom: 20px;
+
+    }
+    .headtext h1 {
+        font-size: 1.5rem; /* Adjust text size for smaller screens */
+    }
+}
+
+/* these are the styling for the chat */
+.chat-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.chat-area {
+    flex-grow: 1; /* allows it to take avaiable space */
+    display: flex;
+    flex-direction: column;
+}
+
+/* chat messages container with scrolling */
+#chat-messages {
+    flex-grow: 1;
+    overflow-y: auto; /* enables vertical scrolling */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.message-input {
+    display: flex;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+
+#message-input {
+    flex-grow: 1;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.message {
+    margin-top: auto;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+.timestamp {
+    color: #666;
+    font-size: 0.8em;
+    margin-left: 10px;
+}

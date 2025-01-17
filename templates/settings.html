@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Settings
+{% endblock %}
+
+{% block main %}
+    <!--Bootstrap template-->
+    <section class="w-100 px-4 py-5" style="background-color: #cdcad8; border-radius: .5rem .5rem 0 0;">
+        <div class="row d-flex justify-content-center">
+            <div class="col col-md-9 col-lg-7 col-xl-6">
+                <div class="card" style="border-radius: 15px;">
+                    <div class="card-body p-4">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0">
+                                <img src="{{ url_for('static', filename='blank.jpg') }}"
+                                alt="Generic placeholder image" class="blankprof img-fluid" style="width: 180px; border-radius: 10px;">
+                            </div>
+                            <!-- displays the user's current streak, total challenges completed and the date taht their account was made in-->
+                            <div class="flex-grow-1 ms-3">
+                                <h5 class="mb-5">{{username}}</h5>
+                                <div class="d-flex justify-content-start rounded-3 p-2 mb-2 bg-body-tertiary">
+                                    <div>
+                                        <p class="small text-muted mb-1">Current streak</p>
+                                        <p class="mb-0">{{ streak }}</p>
+                                    </div>
+                                    <div class="px-3">
+                                        <p class="small text-muted mb-1">Total Challenges Completed</p>
+                                        <p class="mb-0">{{total_challenges}}</p>
+                                    </div>
+                                    <div>
+                                        <p class="small text-muted mb-1">Account created</p>
+                                        <p class="mb-0">{{date}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- button that leads to the password change page-->
+        <div class="mt-5">
+            <a href="{{url_for('passwordchange')}}" class="btn btn-primary">Change your password</a>
+        </div>
+    </section>
+
+
+{% endblock %}

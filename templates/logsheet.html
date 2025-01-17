@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Logs
+{% endblock %}
+
+{% block main %}
+    <form action="{{url_for('logsheet')}}" method="post">
+        <div class="container1">
+            <div class="mb-5 food">
+                <h1>Daily Food Log</h1>
+                
+                <!--similar to login page, there is a label and and an input for each of these different values-->
+                <div class="form-group align-items-center row mb-3">
+                    <label for="calories" class="fw-bold col-sm-2 col-form-label">Calories (cal)</label>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control" id="calories" name="calories" autocomplete="off" placeholder="Enter total calories" required>
+                    </div>
+                </div>
+
+                <div class="form-group align-items-center row mb-3">
+                    <label for="proteins" class="fw-bold col-sm-2 col-form-label">Proteins (g)</label>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control" id="proteins" name="proteins" autocomplete="off" placeholder="Enter total proteins" required>
+                    </div>
+                </div>
+
+                <div class="form-group align-items-center row mb-3">
+                    <label for="carbs" class="fw-bold col-sm-2 col-form-label">Carbohydrates (g)</label>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control" id="carbs" name="carbs" autocomplete="off" placeholder="Enter total carbohydrates" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5 exercise">
+                <h1>Daily Workout Log</h1>
+
+                <div class="form-group align-items-center row mb-3">
+                    <label for="workout-duration" class="fw-bold col-sm-2 col-form-label"> Duration of work out (mins)</label>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control" id="workout-duration" name="workout-duration" autocomplete="off" placeholder="Enter total minutes worked out" required>
+                    </div>
+                </div>
+
+                <div class="form-group align-items-center row mb-3">
+                    <label for="calories-burnt" class="fw-bold col-sm-2 col-form-label">Calories Burnt (cal)</label>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control" id="calories-burnt" name="calories-burnt" autocomplete="off" placeholder="Enter total calories burnt" required>
+                    </div>
+                </div>
+
+                <div class="form-group align-items-center row mb-3">
+                    <label for="steps" class="fw-bold col-sm-2 col-form-label"> Steps taken </label>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control" id="steps" name="steps" autocomplete="off" placeholder="Enter total steps taken" required>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit"> Submit Log</button>
+        </div>
+
+    </form>
+
+{% endblock %}

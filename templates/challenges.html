@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Challenges
+{% endblock %}
+
+{% block main %}
+
+    <!-- Displays streak and total challenges completed in a dark text with margin bottom as 5-->
+    <div class="text-dark mb-5">
+        <h3>Streak: {{ streak }} days</h3>
+        <h3>Total Challenges Completed: {{ total_challenges_completed }}</h3>
+    </div>
+
+    <!-- Loops through the 3 challenges and displays them as well as the progress and if its completed or in progress-->
+    <div class="mt-5 text-dark row">
+        {% for challenge in challenges %}
+            <!--used in bootstrap to define the column width-->
+            <div class="col-md-4">
+                <p>{{ challenge.description }}</p>
+                <progress value="{{ challenge.progress }}" max="{{ challenge.goal }}"></progress>
+                <p>{{ challenge.progress }}/{{ challenge.goal }}</p>
+                {% if challenge.is_completed %}
+                    <p>Status: Completed</p>
+                {% else %}
+                    <p>Status: In Progress</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

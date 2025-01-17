@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Community Chat
+{% endblock %}
+
+{% block main %}
+    <div class="chat-container text-dark">
+        <div class="chat-area">
+            <div id="chat-messages" class="messages">
+                <!-- Load previous messages -->
+                 <!--loops through the 50 messages that are passed and displays them-->
+                {% for message in messages %}
+                <div class="message">
+                    <strong>{{ message['username'] }}</strong>
+                    <span class="timestamp">{{ message['timestamp'] }}</span>
+                    <p>{{ message['content'] }}</p>
+                </div>
+                {% endfor %}
+            </div>
+            <!--A place for users to type their message-->
+            <div class="message-input">
+                <input type="text" id="message-input" placeholder="Type a message...">
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+        // wait until the whole page is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // establish a connection to the server
+            const socket = io();
+            
+            // references to the values
+            const chatMessages = document.getElementById('chat-messages');
+            const messageInput = document.getElementById('message-input');
+            const sendButton = document.getElementById('send-button');
+
+            // Scroll to bottom on page load
+            scrollToBottom();
+
+            // Send message
+            sendButton.addEventListener('click', sendMessage);
+            messageInput.addEventListener('keypress', (e) => {
+                // sends message when enter key is pressed
+                if (e.key === 'Enter') sendMessage();
+            });
+
+            // function to send message to the server
+            function sendMessage() {
+                const message = messageInput.value.trim();
+                // ensures that message is not empty
+                if (message) {
+                    socket.emit('send_message', {
+                        message: message
+                    });
+                    messageInput.value = '';
+                }
+            }
+
+            // Receive messages
+            socket.on('new_message', (data) => {
+                // create a new message element
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message');
+                // set the inner HTML of the message element to display the message
+                messageElement.innerHTML = `
+                    <strong>${data.username}</strong>
+                    <span class="timestamp">${data.timestamp}</span>
+                    <p>${data.message}</p>
+                `;
+                // appends the new message to the chat messages container
+                chatMessages.appendChild(messageElement);
+                scrollToBottom();
+            });
+
+                // Function to scroll to bottom
+                function scrollToBottom() {
+                    // scrolls to the last message into view
+                    const lastMessage = chatMessages.lastElementChild;
+                    if (lastMessage) {
+                        lastMessage.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+        });
+    </script>
+{% endblock %}

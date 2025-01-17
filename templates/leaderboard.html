@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Leaderboard
+{% endblock %}
+
+{% block main %}
+    <!-- displays the two leaderboard tables, one for streaks and the other for total challenges completed-->
+    <div class="text-dark">
+        <div class="mb-5">
+            <div class="table-title fs-1">Top Streaks</div>
+                <table class="table table-dark">
+                    <thead>
+                        <tr class="fw-bold"></tr>
+                            <th scope="col">Rank</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">Streak</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in streak_lead %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{ user['username'] }}</td>
+                                <td>{{ user['streak'] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="mt-5">
+            <div class="table-title text-dark fs-1">Most challenges completed</div>
+                <table class="table table-dark">
+                    <thead>
+                        <tr class="fw-bold"></tr>
+                            <th scope="col">Rank</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">Challenges Completed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in challenges_lead %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{ user['username'] }}</td>
+                                <td>{{ user['total_challenges_completed'] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
