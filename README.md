@@ -1,26 +1,60 @@
 # FitPulse
 
-FitPulse:
-This is a web application designed for users to keep track of their fitness journey, goals, challenges, and progress. The application allows for users to select different goals
-that gives them a detailed plan for accomplishing that goal. Additionally, it enables users to log their daily nutrition and food datas and their workout datas. Overall, it enables
-for the users to track their progress. Furthermore, the application also includes a challenges feature that includes 3 new challenges for the users to complete everyday. 
-By completing all three challenges, the users are able to build up their streaks and also their total challenges completed. There is also a leaderboard feature that dispalys 
-the top 20 users with the most streaks and the top 20 users with the most challenges completed. Finally, there is a community chat feature in which users are able to chat with other 
-users, possibly to ask for help or to let others know about their progress. 
+**FitPulse** is a full-stack web application that helps users track their **fitness journey, goals, challenges, nutrition, and progress**.
+
+Within the webpage, users can:
+- Set fitness goals with **personalized plans**
+- Log **daily nutrition and workouts**
+- Complete **3 new challenges daily** to build streaks and track consistency
+- Compete on a **leaderboard** of top streaks and completed challenges
+- Connect with others via a built-in **community chat**
+
+----
 
 Features:
-This application includes a user authentication system in which the users are able to create accounts through register page. They must create accounts with a unique username that is 
-not already taken. Additionally, the users must fill out all fields before submitting for correct results. It also includes a login feature where users are able to login to their 
-old accounts that they created previously. Users must enter the correct username and password. This is tracked securely using Flask-login. Furthermore, there is also the ability 
-for the users to change their password if they feel that their old password is not secure enough. This is available under the profile --> settings section. This lets them enter their 
-old password, and their new password that they would like to change to.
+- **User Autehntication**
+    - Register with unique username (validated for duplicates)
+    - Secure login/logout system with Flask-Login
+    - Change password anytime from **Profile -> Settings**
 
-Implementation:
-Since the zip file already has most of the files needed to run this program, there shouldn't be much needed to run this program. So, to run this program, unzip the project file and extract
-the contents out of the file. Then, set up a virtual environment by typing "python -m venv venv" in the terminal. Activate that environment by typing "source venv/bin/activate" on mac or 
-"venv\Scripts\activate" on windows. Then, run the application by typing "flask run" in the terminal. Copy and paste the given link in google to open the website. 
+- **Progress Tracking**
+    - Log workouts and nutrition and exercise data
+    - Dashboard view for history
 
-To use this program, first, create an account by going to the register page. Then select a goal to see the plan that you should follow to accomplish that goal. Then go to log to start 
-tracking your fitness progress. Then go to dashboard to view your history. Then complete the challenges that are assigned to you and then view the leaderboard to see the top 20 users 
-with the greatest streaks and challenges completed. Then finally, communicate with the community, using the chat feature of the website.
+- **Goals & Challenges**
+    - Select from multiple fitness goals with tailored diet and workout plans
+    - 3 new challenges every day to stay engaged
+    - Build streaks & track total challenges completed
 
+- **Leaderboard**
+    - Top 20 users ranked by streaks
+    - Top 20 users ranked by challenges completed
+
+- **Community Chat**
+    - Real-time chat system to share progress, ask for help, or find a community
+
+---
+**Tech Stack**
+- **Backend:** Python, Flask, Flask-Login, SQLAlchemy
+- **Frontend:** HTML, CSS
+- **Database:** SQLite
+  
+### Setup
+
+```bash
+# Clone repo
+git clone https://github.com/NischalT2/FitPulse
+cd FitPulse
+
+# Create virtual environment
+python -m venv venv
+# Activate (Mac/Linux)
+source venv/bin/activate
+# Activate (Windows)
+venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+#Run application
+flask run
