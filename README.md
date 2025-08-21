@@ -58,3 +58,34 @@ pip install -r requirements.txt
 
 #Run application
 flask run
+```
+
+## Screenshots
+
+### Landing Page
+<img width="2940" height="1536" alt="image" src="https://github.com/user-attachments/assets/905d2115-d618-4b27-81e4-7e6cfc44b081" />
+
+
+### Log
+<img width="2910" height="1516" alt="image" src="https://github.com/user-attachments/assets/d3d8dfa1-1f7c-4e49-9fce-a14329cded1c" />
+
+### Dashboard
+<img width="2914" height="1496" alt="image" src="https://github.com/user-attachments/assets/cf2b2580-4d11-4ce3-ad1b-38867722dad8" />
+
+### Challenges
+<img width="2920" height="1380" alt="image" src="https://github.com/user-attachments/assets/3acf6372-1f3a-4982-a9e7-9d7169a342e4" />
+
+### Leaderboard
+<img width="2854" height="1478" alt="image" src="https://github.com/user-attachments/assets/386349ca-50ac-4cfe-bd3b-67b4820620c7" />
+
+### Community Chat
+<img width="2778" height="1034" alt="image" src="https://github.com/user-attachments/assets/86bbf640-aca2-4125-80c6-9aa626fbfa9d" />
+
+### Goals
+<img width="2872" height="1446" alt="image" src="https://github.com/user-attachments/assets/1325c0a0-3638-4c9f-be5a-54d7d3c18d8b" />
+
+
+
+
+
+
