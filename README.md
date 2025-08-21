@@ -38,7 +38,9 @@ Features:
 - **Backend:** Python, Flask, Flask-Login, SQLAlchemy
 - **Frontend:** HTML, CSS
 - **Database:** SQLite
-  
+
+---
+
 ### Setup
 
 ```bash
